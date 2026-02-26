@@ -1,15 +1,47 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+#
+# IMPORTANTE: Las carpetas backend/, app/, components/, services/, lib/, docs/, contexts/
+# NO deben estar aquí. Son esenciales para desplegar la app (Railway + Expo).
 
-# dependencies
+# ========== Dependencias ==========
 node_modules/
 
-# Expo
+# ========== Expo / React Native ==========
 .expo/
 dist/
 web-build/
 expo-env.d.ts
 
-# Native
+# ========== Native (solo si usas prebuild - EAS Build las genera) ==========
+/ios
+/android
+
+# ========== Metro ==========
+.metro-health-check*
+
+# ========== Debug ==========
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# ========== Sistema / IDE ==========
+.DS_Store
+*.pem
+
+# ========== Archivos de entorno (secretos - NO subir) ==========
+# Usa .env.example como plantilla para documentar variables
+.env
+.env.local
+.env*.local
+backend/.env
+
+# ========== TypeScript ==========
+*.tsbuildinfo
+
+# ========== Ejemplo/plantilla (no es tu app) ==========
+/app-example
+
+# ========== Certificados y claves (seguridad) ==========
 .kotlin/
 *.orig.*
 *.jks
@@ -17,27 +49,3 @@ expo-env.d.ts
 *.p12
 *.key
 *.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-app-example
-
-# generated native folders
-/ios
-/android
