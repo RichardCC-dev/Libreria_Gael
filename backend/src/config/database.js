@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-// Soporta variables de Railway (MYSQL*) y locales (DB_*)
+// Prioridad: 1) MYSQL_URL (Railway) 2) MYSQL* 3) DB_* (local)
 function getDbConfig() {
   const url = process.env.MYSQL_URL || process.env.DATABASE_URL;
   if (url) {
